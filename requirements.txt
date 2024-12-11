@@ -1,0 +1,12 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+-f https://data.pyg.org/whl/torch-2.0.0+cu118.html
+ipdb==0.13.13
+matplotlib==3.8.4
+numpy==1.22.4
+pandas==2.2.3
+pytorch_warmup==0.1.1
+scikit_learn==1.4.2
+scipy==1.7.3
+torch==2.2.2+cu118
+tqdm==4.66.2
+transformers==4.39.3

@@ -1,0 +1,48 @@
+method: grid
+name: roberta-tweeteval_offensive
+metric: 
+  goal: maximize
+  name: f1_score
+parameters:
+  fine_tune_task:
+    values: ['tweeteval_offensive']
+  task_type:
+    values: ['cls']
+  pretrained_model_path:
+    values: ['ptms/roberta-base']
+  output_dir:
+    values: ['outputs/spc/tweeteval_offensive_roberta/tweeteval_offensive']
+  seed:
+    values: [0, 1, 2, 3, 4]
+  var_weight:
+    values: [0.1]
+  clu_weight:
+    values: [1e-1]
+  dropout:
+    values: [0] # 0.2
+  max_length:
+    values: [128] # ,256
+  weight_decay:
+    values: [0]
+  
+  warmup_ratio:
+    values: [0.1]
+  bs:
+    values: [128]
+  epoch:
+    values: [25]
+  patience:
+    values: [5]
+  dataset_percentage:
+    values: [1]
+  lr:
+    values: [5e-5]
+program: /workspace/SPC/main.py
+project: SESPC
+command:
+- ${env}
+- python
+- ${program}
+- ${args}
+- --batch_sampling_flag
+- --normalize_flag

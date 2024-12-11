@@ -1,0 +1,54 @@
+method: grid
+name: claire_v2
+metric: 
+  goal: maximize 
+  name: spearmanr
+parameters:
+  fine_tune_task: 
+    values: ['claire_v2']
+  task_type: 
+    values: ['res']
+  pretrained_model_path: 
+    values: ['ptms/roberta-base']
+  output_dir: 
+    values: ['outputs/spc/claire_v2_roberta/claire_v2']
+  seed: 
+    values: [0, 1, 2, 3, 4]
+  var_weight: 
+    values: [1]
+  clu_weight: 
+    values: [1e-2]
+  dropout: 
+    values: [0] # 0.2
+  weight_decay: 
+    values: [0]
+  soft_se:
+    distribution: categorical
+    values:
+      - true
+  
+  warmup_ratio: 
+    value: 0.1
+  max_length: 
+    value: 128
+  bs: 
+    value: 128
+  epoch: 
+    value: 25
+  patience: 
+    value: 5
+  dataset_percentage: 
+    value: 1
+  lr: 
+    value: 5e-5
+  batch_sampling_flag:
+    value: true
+  tokenizer_add_e_flag:
+    value: true
+program: /workspace/SPC/main.py
+project: SESPC
+command:
+- ${env}
+- python
+- ${program}
+- ${args_no_boolean_flags}

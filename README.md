@@ -17,7 +17,7 @@ bash scripts/run_offensive.sh
 
 Parameters for other datasets could be found in `wandb_script_roberta`
 
-## Use wandb to sweep your best parameter
+## Use wandb to sweep your best parameters
 
 1. Define the parameter combinations in wandb_script_roberta
 
@@ -33,4 +33,4 @@ wandb agent ***
 
 
 ## Credits
-The code and datasets in this repository are based on [SPC](https://github.com/zerohd4869/SPC/blob/main/script/run_train_offenseval.sh).
+The code and datasets in this repository are based on [SPC](https://github.com/zerohd4869/SPC).
